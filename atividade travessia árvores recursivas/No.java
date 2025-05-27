@@ -13,4 +13,13 @@ class No {
         else
             return 1 + contarNos(contar.esquerda) + contarNos(contar.direita);
     }
+
+       public void preOrdem(No pre){
+        if (pre != null) {
+            System.out.print(pre.valor + " ");
+            preOrdem(pre.esquerda);
+            preOrdem(pre.direita);
+        }
+}
+
 }
