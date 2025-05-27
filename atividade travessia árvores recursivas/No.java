@@ -30,5 +30,13 @@ class No {
         }
     }
 
+    public void posOrdem(No pos){
+        if (pos != null){
+            posOrdem(pos.esquerda);
+            posOrdem(pos.direita);
+            System.out.print(pos.valor + " ");
+        }
+    }
+
 
 }
