@@ -17,6 +17,7 @@ class No {
 
         Queue<No> fila = new LinkedList<>();
         fila.add(raiz);
+        
         int contador = 0;
 
         while (!fila.isEmpty()) {
@@ -25,6 +26,26 @@ class No {
 
             if (atual.esquerda != null) fila.add(atual.esquerda);
             if (atual.direita != null) fila.add(atual.direita);
+        }
+
+    return contador;
+    }
+
+
+    public int contarNosIterativoComPilha(No raiz) {
+        if (raiz == null) return 0;
+
+        Stack<No> pilha = new Stack<>();
+        pilha.push(raiz);
+        
+        int contador = 0;
+
+        while (!pilha.isEmpty()) {
+            No atual = pilha.pop();
+            contador++;
+
+            if (atual.direita != null) pilha.add(atual.direita);
+            if (atual.esquerda != null) pilha.add(atual.esquerda);
         }
 
     return contador;
