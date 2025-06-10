@@ -2,12 +2,13 @@ public class Main {
     public static void main(String[] args) {
         ArvoreAVL arvore = new ArvoreAVL();
 
-        arvore.inserir(10);
-        arvore.inserir(20);
-        arvore.inserir(30);
+        int[] chaves = {10, 20, 30, 40, 50, 25};
 
-        arvore.remover(20);
-        System.out.println(arvore.buscar(20));
-        System.out.println(arvore.buscar(30));
+        for (int chave : chaves) {
+            arvore.raiz = arvore.inserir(arvore.raiz, chave);
+        }
+
+        System.out.println("Percurso em ordem da árvore AVL:");
+        arvore.percursoEmOrdem(arvore.raiz);
     }
 }
